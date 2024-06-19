@@ -87,6 +87,8 @@ export function Register() {
             Acessar
           </button>
         </form>
+
+        <Link to="/login">Já possui uma conta? Faça o login!</Link>
       </div>
     </Container>
   );
