@@ -55,7 +55,7 @@ export function New() {
     mode: "onChange",
   });
 
-  const [carImages, setCarImages] = useState<ImageItemProps>([]);
+  const [carImages, setCarImages] = useState<ImageItemProps[]>([]);
 
   async function handleFile(e: ChangeEvent<HTMLInputElement>) {
     if (e.target.files && e.target.files[0]) {
