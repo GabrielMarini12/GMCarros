@@ -1,6 +1,58 @@
+import { useState, useEffect } from "react";
 import { Container } from "../../components/container";
+import { Link } from "react-router-dom";
+
+import { collection, query, getDocs, orderBy } from "firebase/firestore";
+import { db } from "../../services/firebaseConnection";
+
+interface CarsProps {
+  id: string;
+  name: string;
+  year: string;
+  uid: string;
+  price: string | number;
+  city: string;
+  km: string;
+  images: CarImagesProps[];
+}
+
+interface CarImagesProps {
+  name: string;
+  id: string;
+  url: string;
+}
 
 export function Home() {
+  const [cars, setCars] = useState<CarsProps[]>([]);
+
+  useEffect(() => {
+    function loadCars() {
+      const carsRef = collection(db, "cars");
+      const queryRef = query(carsRef, orderBy("created", "desc"));
+
+      getDocs(queryRef).then((snapshot) => {
+        const listcars = [] as CarsProps[];
+
+        snapshot.forEach((doc) => {
+          listcars.push({
+            id: doc.id,
+            name: doc.data().name,
+            year: doc.data().year,
+            km: doc.data().km,
+            city: doc.data().city,
+            price: doc.data().price,
+            images: doc.data().images,
+            uid: doc.data().uid,
+          });
+        });
+
+        setCars(listcars);
+      });
+    }
+
+    loadCars();
+  }, []);
+
   return (
     <Container>
       <section className="bg-white p-4 rounded-lg w-full max-w-3xl mx-auto flex justify-center items-center gap-2">
@@ -18,27 +70,33 @@ export function Home() {
       </h1>
 
       <main className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <section className="w-full bg-white rounded-lg">
-          <img
-            className="w-full rounded-lg mb-2 max-h-72 hover:scale-105 transition-all"
-            src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2024/202405/20240521/audi-rs6-4-0-avant-v8-twinturbo-mhev-tiptronic-wmimagem19053516025.webp?s=fill&w=552&h=414&q=60"
-            alt="Carro"
-          />
-          <p className="font-bold mt-1 mb-2 px-2">AUDI RS6</p>
+        {cars.map((car) => (
+          <Link key={car.id} to={`/car/${car.id}`}>
+            <section className="w-full bg-white rounded-lg">
+              <img
+                className="w-full rounded-lg mb-2 max-h-72 hover:scale-105 transition-all"
+                src={car.images[0].url}
+                alt="Carro"
+              />
+              <p className="font-bold mt-1 mb-2 px-2">{car.name}</p>
 
-          <div className="flex flex-col px-2">
-            <span className="text-zinc-700 mb-6">Ano 2023/2024 | 0 km</span>
-            <strong className="text-black font-medium text-xl">
-              R$ 1.138.990
-            </strong>
-          </div>
+              <div className="flex flex-col px-2">
+                <span className="text-zinc-700 mb-6">
+                  Ano {car.year} | {car.km} km
+                </span>
+                <strong className="text-black font-medium text-xl">
+                  R$ {car.price}
+                </strong>
+              </div>
 
-          <div className="w-full h-px bg-slate-200 my-2"></div>
+              <div className="w-full h-px bg-slate-200 my-2"></div>
 
-          <div className="px-2 pb-2">
-            <span className="text-zinc-700">São Paulo - SP</span>
-          </div>
-        </section>
+              <div className="px-2 pb-2">
+                <span className="text-zinc-700">{car.city}</span>
+              </div>
+            </section>
+          </Link>
+        ))}
       </main>
     </Container>
   );
