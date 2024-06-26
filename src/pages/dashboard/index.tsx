@@ -34,6 +34,7 @@ interface ImageCarProps {
 
 export function Dashboard() {
   const [cars, setCars] = useState<CarProps[]>([]);
+  const [loadImages, setLoadImages] = useState<string[]>([]);
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
@@ -74,6 +75,10 @@ export function Dashboard() {
     setCars(cars.filter((car) => car.id !== id));
   }
 
+  function handleImageLoad(id: string) {
+    setLoadImages((prevImageLoaded) => [...prevImageLoaded, id]);
+  }
+
   return (
     <Container>
       <DashboardHeader />
@@ -87,9 +92,19 @@ export function Dashboard() {
             >
               <FiTrash2 size={26} color="#000" />
             </button>
+            <div
+              className="w-full h-72 rounded-lg bg-slate-200"
+              style={{
+                display: loadImages.includes(car.id) ? "none" : "block",
+              }}
+            ></div>
             <img
               className="w-full rounded-lg mb-2 max-h-70"
               src={car.images[0].url}
+              onLoad={() => handleImageLoad(car.id)}
+              style={{
+                display: loadImages.includes(car.id) ? "block" : "none",
+              }}
             />
             <p className="font-bold mt-1 px-2 mb-2">{car.name}</p>
 
