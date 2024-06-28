@@ -11,3 +11,4 @@
   - npm install uuid
     - npm install @types/uuid --save-dev
   - npm i swiper
+  - toast
