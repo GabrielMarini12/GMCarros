@@ -57,7 +57,31 @@ Aplicação web para compra e venda de veículos 🚗
   - É possível entrar em contato com o vendedor pelo whatsapp, de acordo com o telefone cadastrado.
  
 ![image](https://github.com/GabrielMarini12/GMCarros/assets/101841688/64efbab1-1127-4c48-a4ca-5f4d3388ec45)
- 
+
+-  7 - Responsivo, versão mobile (tela inicial).
+
+![image](https://github.com/GabrielMarini12/GMCarros/assets/101841688/d00bdf9a-28e8-40cb-8c9c-6a3d255dd714)
+
+  - 7.1 - Tela de login.
+
+  ![image](https://github.com/GabrielMarini12/GMCarros/assets/101841688/9921c418-9ccb-45a2-8daf-cc1cf86bcfe4)
+
+  - 7.2 - Tela de cadastro.
+
+  ![image](https://github.com/GabrielMarini12/GMCarros/assets/101841688/598eb4b3-c3d9-40b6-bbd0-6f5c31cc35a4)
+
+  - 7.3 - Tela de dashboard.
+
+  ![image](https://github.com/GabrielMarini12/GMCarros/assets/101841688/db2d2509-cbd7-4adb-b142-e7b4eccb04b6)
+
+  - 7.4 - Tela de cadastro de veículos.
+
+  ![image](https://github.com/GabrielMarini12/GMCarros/assets/101841688/8de005d1-c811-4b23-a446-8d0b3e2d55a6)
+
+  - 7.5 - Tela de detalhes do veículo.
+
+  ![image](https://github.com/GabrielMarini12/GMCarros/assets/101841688/ff48b4f4-afc5-4941-9263-a443d228f68d)
+
 
 # Características
 
