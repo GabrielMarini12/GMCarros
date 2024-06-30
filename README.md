@@ -27,6 +27,37 @@ Aplicação web para compra e venda de veículos 🚗
 
 # Como usar
 
+- 1 - Ao acessar o projeto, essa é a tela inicial (tela de busca de veículos).
+
+![image](https://github.com/GabrielMarini12/GMCarros/assets/101841688/9582dbca-2271-4799-9d6f-d3f19804834d)
+
+- 2 - Tela de login.
+
+![image](https://github.com/GabrielMarini12/GMCarros/assets/101841688/bacf3b66-5ade-488a-b4f5-6954d28c6594)
+
+- 3 - Tela de cadastro.
+
+![image](https://github.com/GabrielMarini12/GMCarros/assets/101841688/f44b91af-e3a6-4d09-9498-38a10ab69734)
+
+- 4 - Tela de dashboard.
+  - Onde aparece todos os veículos cadastrados do usuário, sendo possível excluir.
+
+![image](https://github.com/GabrielMarini12/GMCarros/assets/101841688/3e888864-19b6-4400-b79d-4de010276b95)
+
+- 5 - Tela de cadastro de veículos.
+
+![image](https://github.com/GabrielMarini12/GMCarros/assets/101841688/1641b42a-26b4-42ea-b130-7013dbd97dd8)
+
+  - 5.1 - Exemplo de tela de cadastro de veículos com os dados preenchidos.
+
+  ![image](https://github.com/GabrielMarini12/GMCarros/assets/101841688/69a05e9f-e6e1-4813-858f-efd0aeb9e591)
+
+- 6 - Tela de detalhes do veículo.
+  - Slide de fotos, de acordo com a quantidade de fotos cadastrada.
+  - É possível entrar em contato com o vendedor pelo whatsapp, de acordo com o telefone cadastrado.
+ 
+![image](https://github.com/GabrielMarini12/GMCarros/assets/101841688/64efbab1-1127-4c48-a4ca-5f4d3388ec45)
+ 
 
 # Características
 
